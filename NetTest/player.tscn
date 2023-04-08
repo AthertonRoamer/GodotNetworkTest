@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://wypbm1q8n7hk"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_o5all"]
+[ext_resource type="Texture2D" uid="uid://coke4360g75sq" path="res://art/filler_player1.png" id="2_musy2"]
+[ext_resource type="Script" path="res://player/label.gd" id="3_ude8o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lh6gi"]
+radius = 32.0
+
+[node name="Player" type="RigidBody2D" groups=["player"]]
+position = Vector2(74, 157)
+custom_integrator = true
+script = ExtResource("1_o5all")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_musy2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_lh6gi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -56.0
+offset_top = -81.0
+offset_right = 49.0
+offset_bottom = -31.0
+script = ExtResource("3_ude8o")
+metadata/_edit_group_ = true
+
+[node name="Timer" type="Timer" parent="Label"]
+
+[connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]
