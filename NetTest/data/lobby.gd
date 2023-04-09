@@ -46,7 +46,7 @@ func lobby_preconfigure_game():
 func register_player(info):
 	if Data.is_server:
 		var id = get_tree().get_multiplayer().get_remote_sender_id()
-		Game.player_info[id] = info
+#		Game.player_info[id] = info
 		rpc("lobby_preconfigure_game")
 	
 func _player_disconnected(id : int):
