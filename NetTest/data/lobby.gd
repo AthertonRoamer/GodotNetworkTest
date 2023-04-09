@@ -34,17 +34,27 @@ func start_client():
 func _player_connected(id : int):
 	Game.world.get_node("Waiting").visible = false
 	print("recieved connection!")
-	if Data.is_server:
-		rpc_id(id, "lobby_preconfigure_game")
-	
+#	if Data.is_server:
+#		rpc_id(id, "lobby_preconfigure_game")
+
+@rpc
 func lobby_preconfigure_game():
 	print("we've been told to preconfigure")
+	Game.add_player(1)
+	
+@rpc("any_peer")
+func register_player(info):
+	if Data.is_server:
+		var id = get_tree().get_rpc_sender_id()
+		Data.player_info[id] = info
+		rpc("lobby_preconfigure_game")
 	
 func _player_disconnected(id : int):
 	pass
 	
 func _connected_to_server():
 	print("reached server")
+	rpc("register_player", my_info)
 	
 func _server_disconnected():
 	print("lost connection to server")
