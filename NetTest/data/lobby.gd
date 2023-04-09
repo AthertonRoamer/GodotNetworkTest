@@ -45,7 +45,7 @@ func lobby_preconfigure_game():
 @rpc("any_peer")
 func register_player(info):
 	if Data.is_server:
-		var id = get_tree().get_rpc_sender_id()
+		var id = get_tree().get_multiplayer().get_remote_sender_id()
 		Data.player_info[id] = info
 		rpc("lobby_preconfigure_game")
 	
