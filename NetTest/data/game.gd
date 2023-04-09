@@ -10,7 +10,7 @@ var players := 0
 
 func add_player(id):
 	players += 1 
-	var p = player_scene.instantiate(player_scene)
+	var p = player_scene.instantiate()
 	p.name = str(id)
 	p.player_num = players
 	p.position.x = 300 * players
