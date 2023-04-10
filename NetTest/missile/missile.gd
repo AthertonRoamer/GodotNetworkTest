@@ -4,7 +4,7 @@ var source := 0
 var speed := 4
 var dir := Vector2.UP
 
-var free_distance := 1000
+var free_distance := 1500
 
 func _process(_delta):
 	for a in get_overlapping_bodies():

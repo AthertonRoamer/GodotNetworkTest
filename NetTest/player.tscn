@@ -29,4 +29,10 @@ metadata/_edit_group_ = true
 
 [node name="Timer" type="Timer" parent="Label"]
 
+[node name="NameDisplay" type="Label" parent="."]
+offset_left = -34.0
+offset_top = 38.0
+offset_right = 73.0
+offset_bottom = 61.0
+
 [connection signal="timeout" from="Label/Timer" to="Label" method="_on_timer_timeout"]

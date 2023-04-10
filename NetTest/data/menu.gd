@@ -10,4 +10,6 @@ func _on_serve_pressed():
 func _on_play_pressed():
 	Data.is_server = false
 	Data.ip = $LineEdit.text
+	Data.player_name = $LineEdit2.text
 	get_tree().change_scene_to_packed(w)
+	
