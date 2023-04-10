@@ -89,7 +89,7 @@ func _player_connected(id : int):
 	
 	
 func _player_disconnected(id : int):
-	pass
+	get_tree().paused = true
 	
 	
 func _server_disconnected():

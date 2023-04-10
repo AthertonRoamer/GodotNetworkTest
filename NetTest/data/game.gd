@@ -14,7 +14,7 @@ var spawns := []
 func _ready():
 	var sc1 = spawn_config.new()
 	sc1.num = 1
-	sc1.spawn_pos = Vector2(200, 200)
+	sc1.spawn_pos = Vector2(300, 300)
 	var sc2 = spawn_config.new()
 	sc1.num = 2
 	sc1.spawn_pos = Vector2(200, 600)
