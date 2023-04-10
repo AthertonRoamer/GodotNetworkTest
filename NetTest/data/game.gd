@@ -31,8 +31,9 @@ func preconfigure_game(full_player_info):
 	my_p.name = str(my_id)
 	my_p.set_multiplayer_authority(my_id)
 	my_p.player_name = my_info["player_name"]
-	my_p.player_num = my_info["spawn"].num
-	my_p.position = my_info["spawn"].spawn_pos
+	var my_p_spawn = instance_from_id(my_info["spawn"])
+	my_p.player_num = my_p_spawn.num
+	my_p.position = my_p_spawn.spawn_pos
 	world.add_child(my_p)
 	
 	#create others
@@ -44,8 +45,9 @@ func preconfigure_game(full_player_info):
 		player.set_name(str(p))
 		player.set_multiplayer_authority(p)
 		player.player_name = p_info["player_name"]
-		player.player_num = p_info["spawn"].num
-		player.position = p_info["spawn"].spawn_pos
+		var p_spawn = instance_from_id(p_info["spawn"])
+		player.player_num = p_spawn.num
+		player.position = p_spawn.spawn_pos
 		player.active = false
 		world.add_child(player)
 	
