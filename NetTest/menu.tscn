@@ -46,7 +46,7 @@ offset_left = 337.0
 offset_top = 236.0
 offset_right = 523.0
 offset_bottom = 267.0
-text = "127.0.0.1"
+text = "192.168.1.240"
 
 [node name="LineEdit2" type="LineEdit" parent="."]
 layout_mode = 0

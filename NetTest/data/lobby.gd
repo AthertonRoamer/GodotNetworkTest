@@ -46,7 +46,7 @@ func register_player(info):
 		for s in Game.spawns:
 			if !s.taken:
 				s.taken = true
-				rpc("set_spawn", s)
+#				rpc("set_spawn", s)
 				info["spawn"] = s
 				break
 		Game.player_info[id] = info
