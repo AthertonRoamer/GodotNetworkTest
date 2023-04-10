@@ -42,12 +42,13 @@ func register_player(info):
 	if Data.is_server:
 		var id = get_tree().get_multiplayer().get_remote_sender_id()
 		players_joined += 1
-		info["player_name"] = Data.player_name
+#		info["player_name"] = Data.player_name
 		for s in Game.spawns:
 			if !s.taken:
 				s.taken = true
 #				rpc("set_spawn", s)
-				info["spawn"] = s
+				info["spawn_num"] = s.num
+				info["spawn_pos"] = s.spawn_pos
 				break
 		Game.player_info[id] = info
 		if players_joined == Data.players:
