@@ -63,22 +63,28 @@ func hit():
 	hits += 1
 	prints(str(player_num)+":", "hit")
 	$Label.alert("hit: " + str(hits))
-	
+
+@rpc
 func set_up(b):
 	up = b
-	
+
+@rpc
 func set_down(b):
 	down = b
 	
+@rpc
 func set_right(b):
 	right = b
 	
+@rpc
 func set_left(b):
 	left = b
-	
+
+@rpc
 func set_fire(b):
 	fire = b
 	
+@rpc
 func set_fire_direction(v):
 	fire_direction = v
 	
