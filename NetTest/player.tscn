@@ -10,6 +10,7 @@ radius = 32.0
 [node name="Player" type="RigidBody2D" groups=["player"]]
 position = Vector2(74, 157)
 custom_integrator = true
+lock_rotation = true
 script = ExtResource("1_o5all")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
